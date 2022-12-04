@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eTicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Hakkimizda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tel_no" Type="nvarchar" MaxLength="15" />
+    <Property Name="adress" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar" MaxLength="80" />
+    <Property Name="resim1" Type="nvarchar(max)" />
+    <Property Name="resim2" Type="nvarchar(max)" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="aciklama" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Siparisler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="siparis_veren_user" Type="nvarchar(max)" />
+    <Property Name="siparis_tarihi" Type="datetime" />
+    <Property Name="siparis_listesi" Type="nvarchar(max)" />
+    <Property Name="Sipars_adresi" Type="nvarchar(max)" />
+    <Property Name="Siparis_telno" Type="nvarchar" MaxLength="50" />
+    <Property Name="siparis_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="siparis_postakodu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urun_adi" Type="nvarchar(max)" />
+    <Property Name="urun_aciklamasi" Type="nvarchar(max)" />
+    <Property Name="urun_stok" Type="nvarchar" MaxLength="50" />
+    <Property Name="urun_Tarihi" Type="nvarchar(max)" />
+    <Property Name="urun_fiyati" Type="nvarchar" MaxLength="50" />
+    <Property Name="urun_aktifmi" Type="nvarchar" MaxLength="10" />
+    <Property Name="urun_resmi" Type="nvarchar(max)" />
+    <Property Name="urun_resmi2" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="k_adi" Type="nvarchar(max)" />
+    <Property Name="k_sifre" Type="nvarchar(max)" />
+    <Property Name="k_email" Type="nvarchar(max)" />
+    <Property Name="k_IsAdmin" Type="int" />
+    <Property Name="k_sepet" Type="nvarchar(max)" />
+    <Property Name="k_telno" Type="nvarchar" MaxLength="15" />
+    <Property Name="k_adress" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="eTicaretModelStoreContainer">
+    <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Siparisler" EntityType="Self.Siparisler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

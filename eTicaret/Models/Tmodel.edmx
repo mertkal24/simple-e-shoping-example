@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="eTicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tel_no" Type="nvarchar" MaxLength="15" />
+          <Property Name="adress" Type="nvarchar(max)" />
+          <Property Name="email" Type="nvarchar" MaxLength="80" />
+          <Property Name="resim1" Type="nvarchar(max)" />
+          <Property Name="resim2" Type="nvarchar(max)" />
+          <Property Name="ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="aciklama" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Siparisler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="siparis_veren_user" Type="nvarchar(max)" />
+          <Property Name="siparis_tarihi" Type="datetime" />
+          <Property Name="siparis_listesi" Type="nvarchar(max)" />
+          <Property Name="Sipars_adresi" Type="nvarchar(max)" />
+          <Property Name="Siparis_telno" Type="nvarchar" MaxLength="50" />
+          <Property Name="siparis_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="siparis_postakodu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Urunler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urun_adi" Type="nvarchar(max)" />
+          <Property Name="urun_aciklamasi" Type="nvarchar(max)" />
+          <Property Name="urun_stok" Type="nvarchar" MaxLength="50" />
+          <Property Name="urun_Tarihi" Type="nvarchar(max)" />
+          <Property Name="urun_fiyati" Type="nvarchar" MaxLength="50" />
+          <Property Name="urun_aktifmi" Type="nvarchar" MaxLength="10" />
+          <Property Name="urun_resmi" Type="nvarchar(max)" />
+          <Property Name="urun_resmi2" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="k_adi" Type="nvarchar(max)" />
+          <Property Name="k_sifre" Type="nvarchar(max)" />
+          <Property Name="k_email" Type="nvarchar(max)" />
+          <Property Name="k_IsAdmin" Type="int" />
+          <Property Name="k_sepet" Type="nvarchar(max)" />
+          <Property Name="k_telno" Type="nvarchar" MaxLength="15" />
+          <Property Name="k_adress" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="eTicaretModelStoreContainer">
+          <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Siparisler" EntityType="Self.Siparisler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eTicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tel_no" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="resim1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="resim2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Siparisler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="siparis_veren_user" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="siparis_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="siparis_listesi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sipars_adresi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Siparis_telno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siparis_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siparis_postakodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Urunler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urun_adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="urun_aciklamasi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="urun_stok" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="urun_Tarihi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="urun_fiyati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="urun_aktifmi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="urun_resmi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="urun_resmi2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="k_adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="k_sifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="k_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="k_IsAdmin" Type="Int32" />
+          <Property Name="k_sepet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="k_telno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="k_adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MkEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" />
+          <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
+          <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+          <EntitySet Name="User" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eTicaretModelStoreContainer" CdmEntityContainer="MkEntities">
+          <EntitySetMapping Name="Hakkimizda">
+            <EntityTypeMapping TypeName="eTicaretModel.Hakkimizda">
+              <MappingFragment StoreEntitySet="Hakkimizda">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tel_no" ColumnName="Tel_no" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="resim1" ColumnName="resim1" />
+                <ScalarProperty Name="resim2" ColumnName="resim2" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Siparisler">
+            <EntityTypeMapping TypeName="eTicaretModel.Siparisler">
+              <MappingFragment StoreEntitySet="Siparisler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="siparis_veren_user" ColumnName="siparis_veren_user" />
+                <ScalarProperty Name="siparis_tarihi" ColumnName="siparis_tarihi" />
+                <ScalarProperty Name="siparis_listesi" ColumnName="siparis_listesi" />
+                <ScalarProperty Name="Sipars_adresi" ColumnName="Sipars_adresi" />
+                <ScalarProperty Name="Siparis_telno" ColumnName="Siparis_telno" />
+                <ScalarProperty Name="siparis_email" ColumnName="siparis_email" />
+                <ScalarProperty Name="siparis_postakodu" ColumnName="siparis_postakodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Urunler">
+            <EntityTypeMapping TypeName="eTicaretModel.Urunler">
+              <MappingFragment StoreEntitySet="Urunler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="urun_adi" ColumnName="urun_adi" />
+                <ScalarProperty Name="urun_aciklamasi" ColumnName="urun_aciklamasi" />
+                <ScalarProperty Name="urun_stok" ColumnName="urun_stok" />
+                <ScalarProperty Name="urun_Tarihi" ColumnName="urun_Tarihi" />
+                <ScalarProperty Name="urun_fiyati" ColumnName="urun_fiyati" />
+                <ScalarProperty Name="urun_aktifmi" ColumnName="urun_aktifmi" />
+                <ScalarProperty Name="urun_resmi" ColumnName="urun_resmi" />
+                <ScalarProperty Name="urun_resmi2" ColumnName="urun_resmi2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="eTicaretModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="k_adi" ColumnName="k_adi" />
+                <ScalarProperty Name="k_sifre" ColumnName="k_sifre" />
+                <ScalarProperty Name="k_email" ColumnName="k_email" />
+                <ScalarProperty Name="k_IsAdmin" ColumnName="k_IsAdmin" />
+                <ScalarProperty Name="k_sepet" ColumnName="k_sepet" />
+                <ScalarProperty Name="k_telno" ColumnName="k_telno" />
+                <ScalarProperty Name="k_adress" ColumnName="k_adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

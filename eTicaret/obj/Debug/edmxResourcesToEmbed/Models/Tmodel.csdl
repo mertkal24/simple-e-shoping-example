@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eTicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Hakkimizda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tel_no" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="resim1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Siparisler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="siparis_veren_user" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="siparis_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="siparis_listesi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sipars_adresi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Siparis_telno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="siparis_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="siparis_postakodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urun_adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="urun_aciklamasi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="urun_stok" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="urun_Tarihi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="urun_fiyati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="urun_aktifmi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="urun_resmi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="urun_resmi2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="k_adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="k_sifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="k_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="k_IsAdmin" Type="Int32" />
+    <Property Name="k_sepet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="k_telno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="k_adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="MkEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" />
+    <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+    <EntitySet Name="User" EntityType="Self.User" />
+  </EntityContainer>
+</Schema>

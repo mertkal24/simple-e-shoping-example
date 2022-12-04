@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eTicaretModelStoreContainer" CdmEntityContainer="MkEntities">
+    <EntitySetMapping Name="Hakkimizda">
+      <EntityTypeMapping TypeName="eTicaretModel.Hakkimizda">
+        <MappingFragment StoreEntitySet="Hakkimizda">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tel_no" ColumnName="Tel_no" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="resim1" ColumnName="resim1" />
+          <ScalarProperty Name="resim2" ColumnName="resim2" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siparisler">
+      <EntityTypeMapping TypeName="eTicaretModel.Siparisler">
+        <MappingFragment StoreEntitySet="Siparisler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="siparis_veren_user" ColumnName="siparis_veren_user" />
+          <ScalarProperty Name="siparis_tarihi" ColumnName="siparis_tarihi" />
+          <ScalarProperty Name="siparis_listesi" ColumnName="siparis_listesi" />
+          <ScalarProperty Name="Sipars_adresi" ColumnName="Sipars_adresi" />
+          <ScalarProperty Name="Siparis_telno" ColumnName="Siparis_telno" />
+          <ScalarProperty Name="siparis_email" ColumnName="siparis_email" />
+          <ScalarProperty Name="siparis_postakodu" ColumnName="siparis_postakodu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunler">
+      <EntityTypeMapping TypeName="eTicaretModel.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="urun_adi" ColumnName="urun_adi" />
+          <ScalarProperty Name="urun_aciklamasi" ColumnName="urun_aciklamasi" />
+          <ScalarProperty Name="urun_stok" ColumnName="urun_stok" />
+          <ScalarProperty Name="urun_Tarihi" ColumnName="urun_Tarihi" />
+          <ScalarProperty Name="urun_fiyati" ColumnName="urun_fiyati" />
+          <ScalarProperty Name="urun_aktifmi" ColumnName="urun_aktifmi" />
+          <ScalarProperty Name="urun_resmi" ColumnName="urun_resmi" />
+          <ScalarProperty Name="urun_resmi2" ColumnName="urun_resmi2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="eTicaretModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="k_adi" ColumnName="k_adi" />
+          <ScalarProperty Name="k_sifre" ColumnName="k_sifre" />
+          <ScalarProperty Name="k_email" ColumnName="k_email" />
+          <ScalarProperty Name="k_IsAdmin" ColumnName="k_IsAdmin" />
+          <ScalarProperty Name="k_sepet" ColumnName="k_sepet" />
+          <ScalarProperty Name="k_telno" ColumnName="k_telno" />
+          <ScalarProperty Name="k_adress" ColumnName="k_adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

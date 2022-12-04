@@ -1,0 +1,138 @@
+﻿@model eTicaret.Models.multiModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    @*#fed136  sarı renk*@
+
+    .masthead {
+        height: 100vh;
+    }
+    #balSlider{
+        text-align:center;
+        background-color:#fed136;
+        background-size:cover;      
+        box-sizing:border-box;
+       height:100vh;
+        
+
+    }
+    #slider{
+        height:auto;
+        width:50%;
+        margin-left:25%;
+
+    }
+    #resimSlider{
+        height:80%;
+        width:80%;
+    }
+    .sticky {
+        position: fixed;
+        right: 5%;
+        top: 10%;
+        height: auto;
+        width:auto;
+        display: none;
+        background-color: #212529;
+        background-repeat: round;
+       border:solid;
+       border-color:white;
+    }
+    #k{
+        margin-left:5%;
+    }
+    #nene{
+        margin-left:7%;
+    }
+    #Son5box{
+        float:left;
+        width:200px;
+        border:5px solid;
+        border-color:white;
+        margin:15px;
+    }
+    
+</style>
+
+<header id="kafa" class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Rizenin En Doğal Balları</div>
+        <div class="masthead-heading text-uppercase">Sipariş Edin Hemen Kapınıza Gelsin</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" id="uyeOl">Sipariş</a>
+    </div>
+</header>
+<hr />
+<section id="balSlider">
+    <h1 style="margin-top:-5%">ÜRÜNLERİMİZ</h1>
+    <div class="container">
+        @foreach (var item in Model.urun)
+        {
+            <div id="Son5box">
+                <img  id="foto-@item.Id"style="height:80px;width:auto" src="@item.urun_resmi" />
+                <p id="ad-@item.Id"><strong>Ürün Adı</strong>@item.urun_adi</p>
+                <p id="acıklama-@item.Id"><strong>Açıklama:</strong>@item.urun_aciklamasi</p>
+                <p id="fiyat-@item.Id"><strong>Ürün Fiyatı:</strong>  @item.urun_fiyati</p>
+                <button id="@item.Id" class="btn btn-success Sekle">Sepete Ekle</button><button style="margin-left:10px" class="btn btn-info">İncele</button>                                                                                                                                 
+            </div>
+        }
+    </div>
+    
+  
+    </section>
+<section id="hakkimizda">
+</section>
+<section id="iletisim">
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Example multiple select</label>
+                <select multiple class="form-control" id="exampleFormControlSelect2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </form>
+    </div>
+</section>
+<div id="sepet" class="sticky">
+    <h4 style="text-align:center;color:white;margin-top:5%">SEPETİM</h4>
+    <table>
+
+        <tbody id="spt" style="color:white">
+           <tr>
+               <td id="spt-yok">Sepetinizde Hiç Ürün Yok</td>
+               <td id="tpln"><p id="toplam">0</p></td>
+           </tr>
+        </tbody>
+    </table>
+
+    <button style="margin-top:5%;margin-left:5%;margin-right:5%;margin-bottom:5% " class="btn btn-success">Sipariş Oluştur</button>
+</div>
+
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="~/Scripts/Custom/mert.js"></script>
+<link href="~/Content/Theme/css/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert2.min.js"></script>
